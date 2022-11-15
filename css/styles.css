@@ -40,26 +40,57 @@ h3,
 h4,
 h5,
 h6,
-p,
+p {
+  margin: 0;
+}
 ul {
-  margin-top: 0;
-  /* margin-bottom: 0; */
+  margin: 0;
+  padding-left: 0;
+}
+img {
+  display: block;
 }
 .title {
   margin-bottom: 10px;
 }
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+/*-------outline и beckground убрать--------*/
 
 .container {
   width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   /* margin: 0 auto; то же самое*/
-  padding-left: 15px;
   padding-right: 15px;
+  padding-left: 15px;
+  outline: 2px solid tomato;
 }
 
-/* site-nav */
+/* -----------------header ----------*/
+/* .header-flex {
+  display: flex;
+} */
+
+.header-cont,
+.header-nav {
+  display: flex;
+  align-items: center;
+}
+
 .header-logo {
+  margin-right: 93px;
+
   color: var(--head-logo);
   font-weight: 700;
   font-size: 26px;
@@ -69,7 +100,14 @@ ul {
 .logo-accent {
   color: var(--accent-color);
 }
+.site-nav {
+  display: flex;
+}
 .site-nav .link {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
   color: var(--second-color);
 
   font-weight: 500;
@@ -82,6 +120,20 @@ ul {
 }
 .site-nav .link.current {
   color: var(--accent-color);
+}
+.site-nav .item + .item {
+  margin-left: 50px;
+}
+/* .site-nav .item:not(:last-child) {
+  margin-right: 50px;
+} */
+
+.auth-nav {
+  display: flex;
+  margin-left: auto;
+}
+.auth-nav .item + .item {
+  margin-left: 50px;
 }
 .cont-link {
   color: var(--brand-color);
@@ -113,7 +165,11 @@ ul {
 .hero {
   text-align: center;
   background-color: var(--background-head);
-  margin-bottom: 94px;
+
+  /* width: 1600px; */
+  height: 600px;
+  padding-top: 200px;
+  padding-bottom: 200px;
 }
 .hero-title {
   color: var(--main-background);
@@ -148,9 +204,13 @@ ul {
   letter-spacing: 0.06em;
 }
 
-/* section */
+/* section bacgr убр*/
 .section {
-  margin-bottom: 94px;
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+.section.no-padding-top {
+  padding-top: 0;
 }
 .section-title {
   margin-bottom: 50px;
@@ -161,8 +221,18 @@ ul {
   line-height: 1.17;
   text-align: center;
   letter-spacing: 0.03em;
-
-  background-color: tomato;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 .benefits-list {
   line-height: 1.7;
@@ -184,6 +254,8 @@ ul {
   line-height: 1.2;
 }
 .team-title {
+  margin-top: 30px;
+
   color: var(--second-color);
 
   font-weight: 500;
@@ -191,11 +263,16 @@ ul {
   line-height: 1.2;
   letter-spacing: 0.03em;
 }
+.team-item {
+  padding-bottom: 30px;
+}
 
 /*---------- footer------------ */
 
 .foot {
   background-color: var(--background-head);
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 .foot-logo {
   color: var(--main-background);
@@ -229,7 +306,18 @@ ul {
 
 /* --------portfolio------------- */
 
+.ptf-filter {
+  display: flex;
+  margin-bottom: 50px;
+  margin-left: auto;
+  justify-content: center;
+}
+.ptf-filter .item:not(:last-child) {
+  margin-right: 8px;
+}
 .button-ptf {
+  /* margin-right: 5px; */
+
   border-radius: 4px;
   padding: 6px 22px;
   display: inline-block;
@@ -252,13 +340,65 @@ ul {
   background-color: var(--accent-color);
   color: var(--main-background);
 }
+
+/* ----убрать марджин у посл 3-х картинок---- */
+/* .ptf-list {
+  
+} */
+.ptf-item {
+  margin-bottom: 30px;
+}
+.ptf-item.last-line {
+  margin-bottom: 0;
+}
+/* .ptf-filter .button-ptf + .button-ptf {
+  margin-left: 80px;
+} */
+
+.ptf-list {
+  display: flex;
+  flex-wrap: wrap;
+}
 .ptf-title {
+  margin-top: 20px;
+  margin-bottom: 4px;
+
   color: var(--second-color);
 
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
 }
+.ptf-cont {
+  width: 370px;
+  height: 404px;
+  padding-bottom: 20px;
+
+  /* height: 404px; */
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+.ptf-cont:nth-child(3n) {
+  margin-right: 0;
+}
+.ptf-cont:nth-last-child(-n + 3) {
+  margin-bottom: 0;
+}
+/* .ptf-item {
+  display: block;
+}
+.ptf-link {
+  display: block;
+  width: 370px;
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+.ptf-link:nth-child(3n) {
+  margin-right: 0;
+}
+.ptf-link:nth-last-child(-n + 3) {
+  margin-bottom: 0;
+} */
 .ptf-project {
   color: var(--brand-color);
 
