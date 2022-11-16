@@ -80,12 +80,13 @@ img {
 }
 
 /* -----------------header ----------*/
-/* .header-flex {
-  display: flex;
-} */
-.header-cont {
+
+.page-header {
   border-bottom: 1px solid var(--line-header);
 }
+/* .header-cont {
+  /* border-bottom: 1px solid var(--line-header); 
+} */
 .header-cont,
 .header-nav {
   display: flex;
@@ -177,6 +178,9 @@ img {
 }
 .hero-title {
   color: var(--main-background);
+  width: 696px;
+  margin-left: auto;
+  margin-right: auto;
 
   font-weight: 900;
   font-size: 44px;
@@ -189,6 +193,7 @@ img {
 }
 .button {
   border-radius: 4px;
+  border: none;
   padding: 10px 30px;
   display: inline-block;
   min-width: 216px;
@@ -302,7 +307,14 @@ img {
   padding-top: 60px;
   padding-bottom: 60px;
 }
+.foot {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
 .foot-logo {
+  display: inline-block;
+  margin-bottom: 20px;
+
   color: var(--main-background);
 
   font-family: 'Raleway', sans-serif;
@@ -317,14 +329,21 @@ img {
   font-style: normal;
   line-height: 1.7;
 }
+
 .foot-contakts {
+  display: inline-block;
+  margin-top: 9px;
+
   color: var(--brand-color);
 }
+
 .foot-contakts:hover,
 .foot-contakts:focus {
   color: var(--accent-color);
 }
+
 .foot-address {
+  display: inline-block;
   color: var(--main-background);
 }
 .foot-address:hover,
@@ -369,26 +388,23 @@ img {
   color: var(--main-background);
 }
 
+/* -------------Портфолио-------------------- */
 /* ----убрать марджин у посл 3-х картинок---- */
-/* .ptf-list {
-  
-} */
-.ptf-item {
-  margin-bottom: 30px;
-}
-.ptf-item.last-line {
-  margin-bottom: 0;
-}
-/* .ptf-filter .button-ptf + .button-ptf {
-  margin-left: 80px;
-} */
 
 .ptf-list {
   display: flex;
   flex-wrap: wrap;
 }
+
+.ptf-item:not(:nth-child(3n)) {
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+.ptf-item:nth-last-child(-n + 3) {
+  margin-bottom: 0;
+}
+
 .ptf-title {
-  margin-top: 20px;
   margin-bottom: 4px;
 
   color: var(--second-color);
@@ -397,17 +413,13 @@ img {
   line-height: 2;
   letter-spacing: 0.06em;
 }
-.ptf-cont {
-  width: 370px;
-  height: 404px;
-  padding-bottom: 20px;
-  /* border: 1px solid var(--border-color); */
 
-  margin-right: 30px;
-  margin-bottom: 30px;
-}
 .ptf-down-block {
+  flex-basis: auto;
+  padding: 20px 24px;
+
   border: 1px solid var(--border-color);
+  border-top: none;
 }
 /* .ptf-img {
   border: 1px solid transparent;
